@@ -102,8 +102,8 @@
      */
     function handleTouchStart(e) {
 
-        // if the element has data-swipe-ignore="true" we stop listening for swipe events
-        if (e.target.getAttribute('data-swipe-ignore') === 'true') return;
+        // if element or any of its parent has data-swipe-ignore="true" we stop listening for swipe events
+        if (e.target.closest('[data-swipe-ignore="true"]')) return;
 
         startEl = e.target;
 
